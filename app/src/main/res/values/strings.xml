@@ -3,5 +3,5 @@
     <string name="email">Email</string>
     <string name="contrasena">Password</string>
     <string name="login">Login</string>
-    <string name="NoTienesCuenta">Not a member?</string>
+    <string name="NoTienesCuenta"><u>Not a member?</u></string>
 </resources>

@@ -4,5 +4,5 @@
     <string name="email">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
     <string name="login">Iniciar sesión</string>
-    <string name="NoTienesCuenta">¿No tienes cuenta? Registrate.</string>
+    <string name="NoTienesCuenta"><u>¿No tienes cuenta? Registrate.</u></string>
 </resources>
