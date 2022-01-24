@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Letra">#BC5F7F</color>
     <color name="AmarilloClaro">#E8E697</color>
+    <color name="Hint">#B58F9C</color>
+    <color name="Nueva_letra_azul">#3D7D85</color>
+    <color name="Naranja_color_secundario">#F4CC90</color>
 </resources>

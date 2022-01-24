@@ -15,5 +15,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_oca_fondo_transparente_500" />
+        app:srcCompat="@drawable/adventure_chest_logo_text_only_6dfcffd8__1_" />
 </androidx.constraintlayout.widget.ConstraintLayout>
