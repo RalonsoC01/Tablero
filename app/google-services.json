@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "552190603268",
+    "project_id": "tablero-93cc8",
+    "storage_bucket": "tablero-93cc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552190603268:android:426eb68cabcc4bdf044551",
+        "android_client_info": {
+          "package_name": "com.example.tablero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552190603268-sm5p1m5a3ef9g42ineg9fdg1mho6jltt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAswqnStQs8_z5RQqyuZZXr4FF1W3AoZ9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552190603268-sm5p1m5a3ef9g42ineg9fdg1mho6jltt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

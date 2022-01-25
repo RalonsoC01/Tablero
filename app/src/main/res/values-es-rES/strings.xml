@@ -6,4 +6,6 @@
     <string name="login">Iniciar sesión</string>
     <string name="NoTienesCuenta"><u>¿No tienes cuenta? Registrate.</u></string>
     <string name="Nombre">Nombre</string>
+    <string name="jugar">¡Jugar!</string>
+    <string name="registrarse">¡Registrarse!</string>
 </resources>

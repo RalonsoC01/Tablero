@@ -84,7 +84,7 @@
         android:fontFamily="@font/acme"
         android:gravity="center|center_horizontal|center_vertical"
         android:inputType="textPassword"
-        android:textColor="@color/Letra"
+        android:textColor="@color/Nueva_letra_azul"
         android:textSize="20sp" />
 
     <Button
@@ -101,9 +101,10 @@
         android:background="@drawable/style_border_editext"
         android:backgroundTint="@color/Naranja_color_secundario"
         android:fontFamily="@font/acme"
-        android:text="@string/login"
+        android:onClick="pasarIndex"
+        android:text="@string/jugar"
         android:textColor="@color/Nueva_letra_azul"
-        android:textSize="20sp" />
+        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/tvRegistro"
