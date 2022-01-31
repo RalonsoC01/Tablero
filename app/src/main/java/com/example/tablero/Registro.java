@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.AuthResult;
@@ -23,9 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener {
-    private EditText nombre;
+    /**private EditText nombre;
     private EditText email;
     private EditText contrasena;
+    private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;**/
+    private EditText nombre;
+    private EditText email;
+    private EditText contrsena;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
 
@@ -39,8 +45,8 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         DatabaseReference myRef = database.getReference("message");
 
         nombre=(EditText) findViewById(R.id.txtNombreRegistro);
-        email=(EditText) findViewById(R.id.txtEmail);
-        contrasena=(EditText)findViewById(R.id.txtContrasena);
+        email=(EditText) findViewById(R.id.txtEmailRegistro);
+        contrsena=(EditText)findViewById(R.id.editTextTextPassword);
 
 
         progressDialog=new ProgressDialog(this);
@@ -50,7 +56,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
 
         String txtEmail = email.getText().toString().trim();
         String txtNombre = nombre.getText().toString().trim();
-        String txtContrasena = contrasena.getText().toString().trim();
+        String txtContrasena = contrsena.getText().toString().trim();
 
 
         if (TextUtils.isEmpty(txtEmail)) {
@@ -65,6 +71,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
             Toast.makeText(this, "Falta ingresar el nombre", Toast.LENGTH_SHORT).show();
             return;
         }
+
         progressDialog.setMessage("Registrando...");
         progressDialog.show();
         mAuth.createUserWithEmailAndPassword(txtEmail, txtContrasena)
@@ -72,7 +79,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            usuario usuario = new usuario(txtNombre, txtEmail); //Creacion de un objeto de tipo usuario
+                            Usuario usuario = new Usuario(txtNombre, txtEmail); //Creacion de un onnjeto de tipo usuario
 
 
                             FirebaseDatabase.getInstance().getReference("Usuario")

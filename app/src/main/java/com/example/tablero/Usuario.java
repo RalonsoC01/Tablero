@@ -1,25 +1,16 @@
 package com.example.tablero;
 
-public class usuario {
+public class Usuario {
     public String username;
     public String email;
-    //  public boolean acepto;
 
-    public usuario(){
+    public Usuario(){
 
     }
 
-    public usuario(String username, String email){
+    public Usuario(String username, String email){
         this.username=username;
         this.email=email;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getEmail() {
@@ -30,4 +21,11 @@ public class usuario {
         this.email = email;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
