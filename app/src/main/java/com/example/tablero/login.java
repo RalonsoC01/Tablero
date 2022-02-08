@@ -49,18 +49,12 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         Intent i= new Intent(this,Registro.class);
         startActivity(i);
     }
-    /**public void prueba(View view)
-    {
-        Intent i= new Intent(this,inicio.class);
-        startActivity(i);
-    }**/
 
     public void pasarIndex(View view){
 
         usuarioStr= Usuario.getText().toString();
         contrsenaStr = contrasena.getText().toString();
         if (!usuarioStr.isEmpty() && !contrsenaStr.isEmpty()){
-
             loginUser();
         }else{
             Toast.makeText(login.this, "El correo o la contraseña no existe.", Toast.LENGTH_SHORT).show();
@@ -77,11 +71,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                     startActivity(intent);
 
                     //Lanzo Toast indicando al usuario que se ha iniciado la sesión
-                    Context context = getApplicationContext();
-                    CharSequence text = "Sesión iniciada";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Sesión iniciada", Toast.LENGTH_SHORT);
                     toast.show();
 
                     //Habilito el botón de jugar
