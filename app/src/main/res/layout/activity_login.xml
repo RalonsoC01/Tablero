@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
         app:srcCompat="@drawable/adventure_chest_logo_text_only_6dfcffd8__1_" />
 
@@ -95,33 +95,52 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
 
         android:background="@drawable/style_border_editext"
-        android:backgroundTint="@color/Naranja_color_secundario"
+        android:backgroundTint="@color/Nueva_letra_azul"
         android:fontFamily="@font/acme"
         android:onClick="pasarIndex"
-        android:text="@string/jugar"
-        android:textColor="@color/Nueva_letra_azul"
+        android:text="@string/login"
+        android:textColor="@color/Naranja_color_secundario"
         android:textSize="34sp" />
 
     <TextView
         android:id="@+id/tvRegistro"
         android:layout_width="306dp"
         android:layout_height="47dp"
-        android:layout_below="@+id/btnLogin"
+        android:layout_below="@+id/btnPlay"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="49dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="46dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="38dp"
         android:gravity="center|center_horizontal|center_vertical"
         android:onClick="registrarme"
         android:text="@string/NoTienesCuenta"
         android:textColor="#2196F3"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="304dp"
+        android:layout_height="65dp"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/style_border_editext"
+        android:backgroundTint="@color/Naranja_color_secundario"
+        android:fontFamily="@font/acme"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:onClick="jugar"
+        android:text="@string/jugar"
+        android:textColor="@color/Nueva_letra_azul"
+        android:textSize="34sp" />
 
 </RelativeLayout>

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -71,39 +72,32 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
             Toast.makeText(this, "Falta ingresar el nombre", Toast.LENGTH_SHORT).show();
             return;
         }
-
         progressDialog.setMessage("Registrando...");
         progressDialog.show();
-        mAuth.createUserWithEmailAndPassword(txtEmail, txtContrasena)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Usuario usuario = new Usuario(txtNombre, txtEmail); //Creacion de un onnjeto de tipo usuario
 
-
-                            FirebaseDatabase.getInstance().getReference("Usuario")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(Registro.this, "Se ha registrado el usuario con el email: " + txtEmail, Toast.LENGTH_SHORT).show();
-
-                                    } else {
-                                        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                            Toast.makeText(getApplicationContext(), "El usuario ya existe", Toast.LENGTH_SHORT).show();
-                                            Intent inicio = new Intent(getApplication(), login.class);
-                                        } else {
-                                            Toast.makeText(getApplicationContext(), "No se pudo registrar el usuario", Toast.LENGTH_SHORT).show();
-                                        }
-                                        progressDialog.dismiss();
-                                    }
-                                }
-                            });
-                        }
+        mAuth.createUserWithEmailAndPassword(txtEmail, txtContrasena).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(Registro.this, "Se ha registrado el usuario con el email: " + txtEmail, Toast.LENGTH_SHORT).show();
+                } else {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        Toast.makeText(getApplicationContext(), "El usuario ya existe", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "No se pudo registrar al usuario", Toast.LENGTH_SHORT).show();
                     }
-                });
+                }
+                progressDialog.dismiss();
+
+                //Lanzo toast
+                Context context = getApplicationContext();
+                CharSequence text = "Prueba";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
     }
 
     @Override

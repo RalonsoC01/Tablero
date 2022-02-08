@@ -3,9 +3,11 @@ package com.example.tablero;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,6 +22,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     private EditText contrasena;
     private String usuarioStr;
     private String contrsenaStr;
+    private Button play;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +33,21 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         Usuario = (EditText) findViewById(R.id.txtEmail);
         contrasena = (EditText) findViewById(R.id.txtContrasena);
 
+        play = (Button) findViewById(R.id.btnPlay);
+        play.setEnabled(false);
+
+    }
+
+    public void jugar(View view)
+    {
+        Intent i= new Intent(this,Juego.class);
+        startActivity(i);
     }
 
     public void registrarme(View view)
     {
         Intent i= new Intent(this,Registro.class);
         startActivity(i);
-        overridePendingTransition(R.anim.deslizar_arriba, R.anim.deslizar_hacia_abajo);
     }
     /**public void prueba(View view)
     {
@@ -64,6 +75,18 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(login.this, Juego.class);
                     startActivity(intent);
+
+                    //Lanzo Toast indicando al usuario que se ha iniciado la sesión
+                    Context context = getApplicationContext();
+                    CharSequence text = "Sesión iniciada";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+
+                    //Habilito el botón de jugar
+                    play.setEnabled(true);
+
                     //Finalizar Activity
                     finish();
                 }else{
