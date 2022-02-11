@@ -8,4 +8,5 @@
     <string name="Nombre">Nombre</string>
     <string name="jugar">¡Jugar!</string>
     <string name="registrarse">¡Registrarse!</string>
+    <string name="Tiradas">Tiradas:</string>
 </resources>

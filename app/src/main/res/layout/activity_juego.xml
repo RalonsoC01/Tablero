@@ -5,4 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Juego"/>
+    tools:context=".Juego">
+
+    <TextView
+        android:id="@+id/tvTiradas"
+        android:layout_width="100dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/acme"
+        android:foregroundGravity="center_vertical|center|center_horizontal"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/Tiradas"
+        android:textColor="@color/Nueva_letra_azul"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/tvNumeroTiradas"
+        android:layout_width="100dp"
+        android:layout_height="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="166dp"
+        android:layout_toEndOf="@+id/tvTiradas"
+        android:fontFamily="@font/acme"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="0"
+        android:textColor="@color/Naranja_color_secundario"
+        android:textSize="34sp" />
+
+    <ImageView
+        android:id="@+id/imgDado"
+        android:layout_width="166dp"
+        android:layout_height="151dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="LanzarDados"
+        app:srcCompat="@drawable/games_dice_craps_10813" />
+
+</RelativeLayout>

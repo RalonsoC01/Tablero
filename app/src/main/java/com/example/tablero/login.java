@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         contrasena = (EditText) findViewById(R.id.txtContrasena);
 
         play = (Button) findViewById(R.id.btnPlay);
-        play.setEnabled(false);
+        play.setEnabled(true);
+        play.setTextColor(Color.parseColor("#9E9E9E"));
 
     }
 
@@ -67,8 +69,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent intent = new Intent(login.this, Juego.class);
-                    startActivity(intent);
+                    /**Intent intent = new Intent(login.this, Juego.class);
+                    startActivity(intent);**/
 
                     //Lanzo Toast indicando al usuario que se ha iniciado la sesión
                     Toast toast = Toast.makeText(getApplicationContext(), "Sesión iniciada", Toast.LENGTH_SHORT);
@@ -76,6 +78,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
                     //Habilito el botón de jugar
                     play.setEnabled(true);
+                    play.setTextColor(Color.parseColor("#ffffff"));
 
                     //Finalizar Activity
                     finish();

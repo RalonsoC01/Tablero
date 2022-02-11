@@ -80,6 +80,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(Registro.this, "Se ha registrado el usuario con el email: " + txtEmail, Toast.LENGTH_SHORT).show();
+
                 } else {
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(getApplicationContext(), "El usuario ya existe", Toast.LENGTH_SHORT).show();
@@ -93,12 +94,16 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 Context context = getApplicationContext();
                 CharSequence text = "Prueba";
                 int duration = Toast.LENGTH_SHORT;
-
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+
+                //Cambio de Activity a login
+                Intent intent = new Intent(Registro.this, login.class);
+                startActivity(intent);
             }
         });
     }
+
 
     @Override
     public void onClick(View v) {
