@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +20,7 @@ public class Juego extends AppCompatActivity {
     String nTiradas;
     private TextView tv_tiradas;
     int dados=0;
-    ImageView imgdado;
+    ImageButton botondado;
     MediaPlayer mp;
 
     @Override
@@ -26,9 +29,10 @@ public class Juego extends AppCompatActivity {
         setContentView(R.layout.activity_juego);
 
         tv_tiradas = findViewById(R.id.tvNumeroTiradas);
-        imgdado = findViewById(R.id.imgDado);
+        botondado = (ImageButton) findViewById(R.id.btnDado);
 
-        imgdado.hasOnClickListeners(new View.OnClickListener())
+        mp = MediaPlayer.create(this, R.raw.sonidodados);
+
 
 
         int[][] tablero = new int[15][15];
@@ -49,31 +53,36 @@ public class Juego extends AppCompatActivity {
         }
     }
 
+
+
     public void LanzarDados(View view){
         dados = (int) (Math.random()*6+1);
         tiradas++;
         this.nTiradas= String.valueOf(this.tiradas);
         tv_tiradas.setText(nTiradas);
 
+        mp.start();
+
        switch (dados){
            case 1:
-               imgdado.setImageResource(R.drawable.dado_1);
+               botondado.setImageResource(R.drawable.dado_1);
                break;
            case 2:
-               imgdado.setImageResource(R.drawable.dado_2);
+               botondado.setImageResource(R.drawable.dado_2);
                break;
            case 3:
-               imgdado.setImageResource(R.drawable.dado_3);
+               botondado.setImageResource(R.drawable.dado_3);
                break;
            case 4:
-               imgdado.setImageResource(R.drawable.dado_4);
+               botondado.setImageResource(R.drawable.dado_4);
                break;
            case 5:
-               imgdado.setImageResource(R.drawable.dado_5);
+               botondado.setImageResource(R.drawable.dado_5);
                break;
            case 6:
-               imgdado.setImageResource(R.drawable.dado_6);
+               botondado.setImageResource(R.drawable.dado_6);
        }
+
 
     }
 
