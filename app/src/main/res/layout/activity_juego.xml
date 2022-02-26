@@ -100,48 +100,56 @@
                 android:id="@+id/btn2x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x0"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x0"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x0"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x0"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x0"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x0"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x0"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x0"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x0"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -153,60 +161,70 @@
                 android:id="@+id/btn0x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x1"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x1"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -218,60 +236,70 @@
                 android:id="@+id/btn0x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x2"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x2"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -283,60 +311,70 @@
                 android:id="@+id/btn0x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x3"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x3"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -348,60 +386,70 @@
                 android:id="@+id/btn0x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x4"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x4"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -413,60 +461,70 @@
                 android:id="@+id/btn0x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x5"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x5"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x5"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -478,60 +536,70 @@
                 android:id="@+id/btn0x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x6"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x6"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x6"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -543,60 +611,70 @@
                 android:id="@+id/btn0x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x7"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x7"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x7"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -608,60 +686,70 @@
                 android:id="@+id/btn0x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x8"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x8"
                 app:srcCompat="@drawable/square__2_" />
         </TableRow>
 
@@ -673,60 +761,70 @@
                 android:id="@+id/btn0x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla0x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn1x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla1x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn2x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla2x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn3x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla3x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn4x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla4x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn5x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla5x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn6x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla6x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn7x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla7x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn8x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla8x9"
                 app:srcCompat="@drawable/square__2_" />
 
             <ImageButton
                 android:id="@+id/btn9x9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:onClick="casilla9x9"
                 app:srcCompat="@drawable/treasure" />
         </TableRow>
     </TableLayout>
