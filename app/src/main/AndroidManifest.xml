@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".Victoria"
+            android:exported="false" />
+        <activity
             android:name=".Juego"
             android:exported="true" />
         <activity

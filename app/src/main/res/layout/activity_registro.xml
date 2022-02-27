@@ -139,7 +139,6 @@
         android:background="@drawable/style_border_editext"
         android:backgroundTint="@color/Naranja_color_secundario"
         android:fontFamily="@font/acme"
-        android:onClick="registrousuario"
         android:text="@string/registrarse"
         android:textColor="@color/Nueva_letra_azul"
         android:textSize="34sp" />

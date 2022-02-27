@@ -2,6 +2,7 @@ package com.example.tablero;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -33,6 +34,8 @@ public class Juego extends AppCompatActivity {
 
     int xmover2=0;
     int ymover2=0;
+
+    Integer score;
 
 
     ImageButton btn0x0;
@@ -24010,6 +24013,9 @@ public class Juego extends AppCompatActivity {
         botondado.setEnabled(true);
     }
 
+
+
+
     public void casilla9x9(View view){
 
         //Muevo el pirata a la posición seleccionada
@@ -24022,6 +24028,10 @@ public class Juego extends AppCompatActivity {
         //Compruebo que el cofre no esté en esta casilla
         if(tablero[xdado][ydado]==1){
             Toast.makeText(Juego.this, "¡Felicidades! ¡has encontrado el cofre!", Toast.LENGTH_SHORT).show();
+            //Cambio a la activity de victoria
+            Intent intent = new Intent(Juego.this, Victoria.class);
+            intent.putExtra("score", tiradas);
+            startActivity(intent);
         }
 
         //Actulizo la imagen de todas las demas casillas
@@ -25966,236 +25976,17 @@ public class Juego extends AppCompatActivity {
         }
     }
 
-    public void Reset(View view){
-        xdado=0;
-        ydado=0;
-
-        btn0x0.setImageResource(R.drawable.pirate);
-
-        btn1x0.setImageResource(R.drawable.square__2_);
-        btn2x0.setImageResource(R.drawable.square__2_);
-        btn3x0.setImageResource(R.drawable.square__2_);
-        btn4x0.setImageResource(R.drawable.square__2_);
-        btn5x0.setImageResource(R.drawable.square__2_);
-        btn6x0.setImageResource(R.drawable.square__2_);
-        btn7x0.setImageResource(R.drawable.square__2_);
-        btn8x0.setImageResource(R.drawable.square__2_);
-        btn9x0.setImageResource(R.drawable.square__2_);
-
-        btn0x1.setImageResource(R.drawable.square__2_);
-        btn1x1.setImageResource(R.drawable.square__2_);
-        btn2x1.setImageResource(R.drawable.square__2_);
-        btn3x1.setImageResource(R.drawable.square__2_);
-        btn4x1.setImageResource(R.drawable.square__2_);
-        btn5x1.setImageResource(R.drawable.square__2_);
-        btn6x1.setImageResource(R.drawable.square__2_);
-        btn7x1.setImageResource(R.drawable.square__2_);
-        btn8x1.setImageResource(R.drawable.square__2_);
-        btn9x1.setImageResource(R.drawable.square__2_);
-
-        btn0x2.setImageResource(R.drawable.square__2_);
-        btn1x2.setImageResource(R.drawable.square__2_);
-        btn2x2.setImageResource(R.drawable.square__2_);
-        btn3x2.setImageResource(R.drawable.square__2_);
-        btn4x2.setImageResource(R.drawable.square__2_);
-        btn5x2.setImageResource(R.drawable.square__2_);
-        btn6x2.setImageResource(R.drawable.square__2_);
-        btn7x2.setImageResource(R.drawable.square__2_);
-        btn8x2.setImageResource(R.drawable.square__2_);
-        btn9x2.setImageResource(R.drawable.square__2_);
-
-        btn0x3.setImageResource(R.drawable.square__2_);
-        btn1x3.setImageResource(R.drawable.square__2_);
-        btn2x3.setImageResource(R.drawable.square__2_);
-        btn3x3.setImageResource(R.drawable.square__2_);
-        btn4x3.setImageResource(R.drawable.square__2_);
-        btn5x3.setImageResource(R.drawable.square__2_);
-        btn6x3.setImageResource(R.drawable.square__2_);
-        btn7x3.setImageResource(R.drawable.square__2_);
-        btn8x3.setImageResource(R.drawable.square__2_);
-        btn9x3.setImageResource(R.drawable.square__2_);
-
-        btn0x4.setImageResource(R.drawable.square__2_);
-        btn1x4.setImageResource(R.drawable.square__2_);
-        btn2x4.setImageResource(R.drawable.square__2_);
-        btn3x4.setImageResource(R.drawable.square__2_);
-        btn4x4.setImageResource(R.drawable.square__2_);
-        btn5x4.setImageResource(R.drawable.square__2_);
-        btn6x4.setImageResource(R.drawable.square__2_);
-        btn7x4.setImageResource(R.drawable.square__2_);
-        btn8x4.setImageResource(R.drawable.square__2_);
-        btn9x4.setImageResource(R.drawable.square__2_);
-
-        btn0x5.setImageResource(R.drawable.square__2_);
-        btn1x5.setImageResource(R.drawable.square__2_);
-        btn2x5.setImageResource(R.drawable.square__2_);
-        btn3x5.setImageResource(R.drawable.square__2_);
-        btn4x5.setImageResource(R.drawable.square__2_);
-        btn5x5.setImageResource(R.drawable.square__2_);
-        btn6x5.setImageResource(R.drawable.square__2_);
-        btn7x5.setImageResource(R.drawable.square__2_);
-        btn8x5.setImageResource(R.drawable.square__2_);
-        btn9x5.setImageResource(R.drawable.square__2_);
-
-        btn0x6.setImageResource(R.drawable.square__2_);
-        btn1x6.setImageResource(R.drawable.square__2_);
-        btn2x6.setImageResource(R.drawable.square__2_);
-        btn3x6.setImageResource(R.drawable.square__2_);
-        btn4x6.setImageResource(R.drawable.square__2_);
-        btn5x6.setImageResource(R.drawable.square__2_);
-        btn6x6.setImageResource(R.drawable.square__2_);
-        btn7x6.setImageResource(R.drawable.square__2_);
-        btn8x6.setImageResource(R.drawable.square__2_);
-        btn9x6.setImageResource(R.drawable.square__2_);
-
-        btn0x7.setImageResource(R.drawable.square__2_);
-        btn1x7.setImageResource(R.drawable.square__2_);
-        btn2x7.setImageResource(R.drawable.square__2_);
-        btn3x7.setImageResource(R.drawable.square__2_);
-        btn4x7.setImageResource(R.drawable.square__2_);
-        btn5x7.setImageResource(R.drawable.square__2_);
-        btn6x7.setImageResource(R.drawable.square__2_);
-        btn7x7.setImageResource(R.drawable.square__2_);
-        btn8x7.setImageResource(R.drawable.square__2_);
-        btn9x7.setImageResource(R.drawable.square__2_);
-
-        btn0x8.setImageResource(R.drawable.square__2_);
-        btn1x8.setImageResource(R.drawable.square__2_);
-        btn2x8.setImageResource(R.drawable.square__2_);
-        btn3x8.setImageResource(R.drawable.square__2_);
-        btn4x8.setImageResource(R.drawable.square__2_);
-        btn5x8.setImageResource(R.drawable.square__2_);
-        btn6x8.setImageResource(R.drawable.square__2_);
-        btn7x8.setImageResource(R.drawable.square__2_);
-        btn8x8.setImageResource(R.drawable.square__2_);
-        btn9x8.setImageResource(R.drawable.square__2_);
-
-        btn0x9.setImageResource(R.drawable.square__2_);
-        btn1x9.setImageResource(R.drawable.square__2_);
-        btn2x9.setImageResource(R.drawable.square__2_);
-        btn3x9.setImageResource(R.drawable.square__2_);
-        btn4x9.setImageResource(R.drawable.square__2_);
-        btn5x9.setImageResource(R.drawable.square__2_);
-        btn6x9.setImageResource(R.drawable.square__2_);
-        btn7x9.setImageResource(R.drawable.square__2_);
-        btn8x9.setImageResource(R.drawable.square__2_);
-        btn9x9.setImageResource(R.drawable.treasure);
 
 
-        //Bloqueo los botones de todos las casillas
-        btn0x0.setEnabled(false);
-        btn1x0.setEnabled(false);
-        btn2x0.setEnabled(false);
-        btn3x0.setEnabled(false);
-        btn4x0.setEnabled(false);
-        btn5x0.setEnabled(false);
-        btn6x0.setEnabled(false);
-        btn7x0.setEnabled(false);
-        btn8x0.setEnabled(false);
-        btn9x0.setEnabled(false);
-
-        btn0x1.setEnabled(false);
-        btn1x1.setEnabled(false);
-        btn2x1.setEnabled(false);
-        btn3x1.setEnabled(false);
-        btn4x1.setEnabled(false);
-        btn5x1.setEnabled(false);
-        btn6x1.setEnabled(false);
-        btn7x1.setEnabled(false);
-        btn8x1.setEnabled(false);
-        btn9x1.setEnabled(false);
-
-        btn0x2.setEnabled(false);
-        btn1x2.setEnabled(false);
-        btn2x2.setEnabled(false);
-        btn3x2.setEnabled(false);
-        btn4x2.setEnabled(false);
-        btn5x2.setEnabled(false);
-        btn6x2.setEnabled(false);
-        btn7x2.setEnabled(false);
-        btn8x2.setEnabled(false);
-        btn9x2.setEnabled(false);
-
-        btn0x3.setEnabled(false);
-        btn1x3.setEnabled(false);
-        btn2x3.setEnabled(false);
-        btn3x3.setEnabled(false);
-        btn4x3.setEnabled(false);
-        btn5x3.setEnabled(false);
-        btn6x3.setEnabled(false);
-        btn7x3.setEnabled(false);
-        btn8x3.setEnabled(false);
-        btn9x3.setEnabled(false);
-
-        btn0x4.setEnabled(false);
-        btn1x4.setEnabled(false);
-        btn2x4.setEnabled(false);
-        btn3x4.setEnabled(false);
-        btn4x4.setEnabled(false);
-        btn5x4.setEnabled(false);
-        btn6x4.setEnabled(false);
-        btn7x4.setEnabled(false);
-        btn8x4.setEnabled(false);
-        btn9x4.setEnabled(false);
-
-        btn0x5.setEnabled(false);
-        btn1x5.setEnabled(false);
-        btn2x5.setEnabled(false);
-        btn3x5.setEnabled(false);
-        btn4x5.setEnabled(false);
-        btn5x5.setEnabled(false);
-        btn6x5.setEnabled(false);
-        btn7x5.setEnabled(false);
-        btn8x5.setEnabled(false);
-        btn9x5.setEnabled(false);
-
-        btn0x6.setEnabled(false);
-        btn1x6.setEnabled(false);
-        btn2x6.setEnabled(false);
-        btn3x6.setEnabled(false);
-        btn4x6.setEnabled(false);
-        btn5x6.setEnabled(false);
-        btn6x6.setEnabled(false);
-        btn7x6.setEnabled(false);
-        btn8x6.setEnabled(false);
-        btn9x6.setEnabled(false);
-
-        btn0x7.setEnabled(false);
-        btn1x7.setEnabled(false);
-        btn2x7.setEnabled(false);
-        btn3x7.setEnabled(false);
-        btn4x7.setEnabled(false);
-        btn5x7.setEnabled(false);
-        btn6x7.setEnabled(false);
-        btn7x7.setEnabled(false);
-        btn8x7.setEnabled(false);
-        btn9x7.setEnabled(false);
-
-        btn0x8.setEnabled(false);
-        btn1x8.setEnabled(false);
-        btn2x8.setEnabled(false);
-        btn3x8.setEnabled(false);
-        btn4x8.setEnabled(false);
-        btn5x8.setEnabled(false);
-        btn6x8.setEnabled(false);
-        btn7x8.setEnabled(false);
-        btn8x8.setEnabled(false);
-        btn9x8.setEnabled(false);
-
-        btn0x9.setEnabled(false);
-        btn1x9.setEnabled(false);
-        btn2x9.setEnabled(false);
-        btn3x9.setEnabled(false);
-        btn4x9.setEnabled(false);
-        btn5x9.setEnabled(false);
-        btn6x9.setEnabled(false);
-        btn7x9.setEnabled(false);
-        btn8x9.setEnabled(false);
-        btn9x9.setEnabled(false);
-
-        botondado.setEnabled(true);
+    public void CerrarSesion(View view)
+    {
+        Intent i= new Intent(this,login.class);
+        startActivity(i);
     }
+    @Override
+    public void onBackPressed() {
 
+    }
 
 
 

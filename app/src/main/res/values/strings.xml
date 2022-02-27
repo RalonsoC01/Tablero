@@ -8,4 +8,6 @@
     <string name="jugar">Play!</string>
     <string name="registrarse">Sign up!</string>
     <string name="Tiradas">Rolls:</string>
+    <string name="Victoria">Victory</string>
+    <string name="Puntuacion">Score:</string>
 </resources>

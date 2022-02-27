@@ -9,4 +9,6 @@
     <string name="jugar">¡Jugar!</string>
     <string name="registrarse">¡Registrarse!</string>
     <string name="Tiradas">Tiradas:</string>
+    <string name="Victoria">Victoria</string>
+    <string name="Puntuacion">Puntuación:</string>
 </resources>

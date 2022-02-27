@@ -28,6 +28,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_login);
 
@@ -52,44 +53,48 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         startActivity(i);
     }
 
-    public void pasarIndex(View view){
 
-        usuarioStr= Usuario.getText().toString();
+    //Este metodo comprobará si el logueo esta bien hecho
+    public void acceso(View view) {
+
+        usuarioStr = Usuario.getText().toString();
         contrsenaStr = contrasena.getText().toString();
-        if (!usuarioStr.isEmpty() && !contrsenaStr.isEmpty()){
-            loginUser();
-        }else{
-            Toast.makeText(login.this, "El correo o la contraseña no existe.", Toast.LENGTH_SHORT).show();
+
+        if(!usuarioStr.isEmpty() && !contrsenaStr.isEmpty()){
+
+            loginuser();
+        }
+        else{
+            Toast.makeText(login.this, "Completa los campos", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void loginUser() {
-        mAuth.signInWithEmailAndPassword(usuarioStr, contrsenaStr).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    //Este método logueará al usuario
+    private void loginuser(){
 
+        mAuth.signInWithEmailAndPassword(usuarioStr, contrsenaStr).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    /**Intent intent = new Intent(login.this, Juego.class);
-                    startActivity(intent);**/
-
-                    //Lanzo Toast indicando al usuario que se ha iniciado la sesión
-                    Toast toast = Toast.makeText(getApplicationContext(), "Sesión iniciada", Toast.LENGTH_SHORT);
-                    toast.show();
-
-                    //Habilito el botón de jugar
+                if (task.isSuccessful()){
+                    //En caso de no error habilitamos el boton de play
                     play.setEnabled(true);
                     play.setTextColor(Color.parseColor("#ffffff"));
 
-                    //Finalizar Activity
-                    finish();
-                }else{
-                    Toast.makeText(login.this, "El correo o la contraseña no existe.", Toast.LENGTH_SHORT).show();
+
+                }
+                //En caso de error lanzo el toast
+                else {
+                    Toast.makeText(login.this, "No se pudo iniciar sesion, compruebe los datos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
 
+    @Override
+    public void onBackPressed() {
+
+    }
     @Override
     public void onClick(View v) {
 
