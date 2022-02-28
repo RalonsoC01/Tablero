@@ -54,7 +54,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    //Este metodo comprobará si el logueo esta bien hecho
+    //Este metodo comprobará si el logueo es correcto y en caso que así sea invoco el método loginuser
     public void acceso(View view) {
 
         usuarioStr = Usuario.getText().toString();
@@ -69,7 +69,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    //Este método logueará al usuario
+    //Este método logueará al usuario y en caso de que no ocurra ningun problema activará el botón para poder jugar
     private void loginuser(){
 
         mAuth.signInWithEmailAndPassword(usuarioStr, contrsenaStr).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -82,7 +82,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
 
                 }
-                //En caso de error lanzo el toast
+                //En caso de error lanzo el toast indicando lo sucedido
                 else {
                     Toast.makeText(login.this, "No se pudo iniciar sesion, compruebe los datos", Toast.LENGTH_SHORT).show();
                 }
@@ -91,6 +91,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+    //Impido que el usuario pueda volver a la anterior Activity
     @Override
     public void onBackPressed() {
 

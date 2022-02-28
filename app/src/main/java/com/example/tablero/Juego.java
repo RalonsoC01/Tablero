@@ -14,11 +14,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Juego extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    int chest=0;
-    int rowchest=0;
-    int colchest=0;
+public class Juego extends AppCompatActivity {
+    /**Advetencia: en caso de que seas mi profesor y estes revisando el código le aviso de que al menos que tengas todo el dia libre no se lo
+     * recomiendo porque va para largo.**/
+
+
     int tiradas=0;
     String nTiradas;
     private TextView tv_tiradas;
@@ -29,15 +33,21 @@ public class Juego extends AppCompatActivity {
     int xdado=0;
     int ydado=0;
 
+    //Creo estas variables para comprobrar las cordenadas en las que se va a poder mover el usuario mediante la suma de los dados
     int xmover=0;
     int ymover=0;
 
+    //Creo estas variables para comprobrar las cordenadas en las que se va a poder mover el usuario mediante la resta de los dados
     int xmover2=0;
     int ymover2=0;
 
-    Integer score;
+
+    //Creo un arraylist para almacenar los records del jugador
+    List l = new ArrayList();
+    int record;
 
 
+    //Creo un ImageButton por cada casilla del tablero
     ImageButton btn0x0;
     ImageButton btn1x0;
     ImageButton btn2x0;
@@ -158,11 +168,13 @@ public class Juego extends AppCompatActivity {
     ImageButton btn9x9;
 
 
+    //Creo un array bidimensional con un tamaño de 10x10
     int[][] tablero = new int[10][10];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
+
 
         tv_tiradas = findViewById(R.id.tvNumeroTiradas);
         botondado = (ImageButton) findViewById(R.id.btnDado);
@@ -400,15 +412,18 @@ public class Juego extends AppCompatActivity {
         mp = MediaPlayer.create(this, R.raw.sonidodados);
 
 
+        //Relleno el array con 0
         for (int i=0;i<tablero.length;i++){
             for(int j=0;j<tablero[0].length;j++){
                 tablero[i][j]=0;
             }
         }
+        //En la posición del cofre le pongo un 1
         tablero[9][9]=1;
-        tablero[0][0]=2;
 
     }
+    /**Ahora habrá un metodo que se encargue de desactivar todos los imagebutton del tablero, de mover al personaje y actualizar la imagen
+     *  de todas las casillas del tablero, en total 100**/
     public void casilla0x0(View view){
 
         //Muevo el pirata a la posición seleccionada
@@ -531,6 +546,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -769,6 +785,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -1008,6 +1025,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -1246,6 +1264,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
         //Bloqueo los botones de todos las casillas
         btn0x0.setEnabled(false);
@@ -1484,6 +1503,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -1604,7 +1624,7 @@ public class Juego extends AppCompatActivity {
     public void casilla5x0(View view){
 
         //Muevo el pirata a la posición seleccionada
-        btn3x0.setImageResource(R.drawable.pirate);
+        btn5x0.setImageResource(R.drawable.pirate);
 
         //Actualizo a X y la Y del array
         xdado=5;
@@ -1723,6 +1743,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -1964,6 +1985,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -2204,6 +2226,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -2444,6 +2467,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
         //Bloqueo los botones de todos las casillas
         btn0x0.setEnabled(false);
@@ -2683,6 +2707,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
         //Bloqueo los botones de todos las casillas
         btn0x0.setEnabled(false);
@@ -2922,6 +2947,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -3162,6 +3188,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -3402,6 +3429,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -3642,6 +3670,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -3882,6 +3911,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -4121,6 +4151,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -4361,6 +4392,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -4601,6 +4633,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -4840,6 +4873,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -5080,6 +5114,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -5319,6 +5354,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -5558,6 +5594,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -5797,6 +5834,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -6037,6 +6075,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -6277,6 +6316,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -6389,6 +6429,7 @@ public class Juego extends AppCompatActivity {
         btn7x9.setEnabled(false);
         btn8x9.setEnabled(false);
         btn9x9.setEnabled(false);
+
 
 
         botondado.setEnabled(true);
@@ -6517,6 +6558,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -6757,6 +6799,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -6997,6 +7040,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -7237,6 +7281,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -7478,6 +7523,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -7716,6 +7762,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -7955,6 +8002,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -8194,6 +8242,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -8433,6 +8482,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -8672,6 +8722,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -8912,6 +8963,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -9152,6 +9204,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -9392,6 +9445,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -9632,6 +9686,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -9871,6 +9926,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -10111,6 +10167,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -10352,6 +10409,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -10530,7 +10588,6 @@ public class Juego extends AppCompatActivity {
 
         btn0x4.setImageResource(R.drawable.square__2_);
         btn1x4.setImageResource(R.drawable.square__2_);
-        btn2x4.setImageResource(R.drawable.square__2_);
         btn3x4.setImageResource(R.drawable.square__2_);
         btn4x4.setImageResource(R.drawable.square__2_);
         btn5x4.setImageResource(R.drawable.square__2_);
@@ -10592,6 +10649,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -10711,7 +10769,7 @@ public class Juego extends AppCompatActivity {
     public void casilla3x4(View view){
 
         //Muevo el pirata a la posición seleccionada
-        btn0x1.setImageResource(R.drawable.pirate);
+        btn3x4.setImageResource(R.drawable.pirate);
 
         //Actualizo a X y la Y del array
         xdado=3;
@@ -10830,6 +10888,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -11069,6 +11128,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -11309,6 +11369,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -11549,6 +11610,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -11788,6 +11850,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -12026,6 +12089,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -12264,6 +12328,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -12502,6 +12567,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -12740,6 +12806,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -12978,6 +13045,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -13215,6 +13283,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -13453,6 +13522,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -13690,6 +13760,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -13928,6 +13999,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -14165,6 +14237,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -14402,6 +14475,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -14639,6 +14713,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -14876,6 +14951,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -15113,6 +15189,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -15350,6 +15427,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -15587,6 +15665,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -15824,6 +15903,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -16061,6 +16141,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -16298,6 +16379,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -16535,6 +16617,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -16773,6 +16856,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -17010,6 +17094,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -17247,6 +17332,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -17366,7 +17452,7 @@ public class Juego extends AppCompatActivity {
     public void casilla1x7(View view){
 
         //Muevo el pirata a la posición seleccionada
-        btn0x1.setImageResource(R.drawable.pirate);
+        btn1x7.setImageResource(R.drawable.pirate);
 
         //Actualizo a X y la Y del array
         xdado=1;
@@ -17485,6 +17571,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -17722,6 +17809,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -17959,6 +18047,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -18197,6 +18286,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -18434,6 +18524,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -18672,6 +18763,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -18910,6 +19002,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -19147,6 +19240,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -19385,6 +19479,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -19622,6 +19717,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -19860,6 +19956,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -20097,6 +20194,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -20335,6 +20433,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -20573,6 +20672,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -20811,6 +20911,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -21049,6 +21150,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -21287,6 +21389,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -21525,6 +21628,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -21762,6 +21866,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -22000,6 +22105,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -22237,6 +22343,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -22474,6 +22581,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -22711,6 +22819,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -22948,6 +23057,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -23186,6 +23296,7 @@ public class Juego extends AppCompatActivity {
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -23421,9 +23532,9 @@ public class Juego extends AppCompatActivity {
         btn3x9.setImageResource(R.drawable.square__2_);
         btn4x9.setImageResource(R.drawable.square__2_);
         btn5x9.setImageResource(R.drawable.square__2_);
-        btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -23660,6 +23771,7 @@ public class Juego extends AppCompatActivity {
         btn5x9.setImageResource(R.drawable.square__2_);
         btn6x9.setImageResource(R.drawable.square__2_);
         btn8x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -23897,6 +24009,7 @@ public class Juego extends AppCompatActivity {
         btn5x9.setImageResource(R.drawable.square__2_);
         btn6x9.setImageResource(R.drawable.square__2_);
         btn7x9.setImageResource(R.drawable.square__2_);
+        btn9x9.setImageResource(R.drawable.treasure);
 
 
         //Bloqueo los botones de todos las casillas
@@ -24028,9 +24141,15 @@ public class Juego extends AppCompatActivity {
         //Compruebo que el cofre no esté en esta casilla
         if(tablero[xdado][ydado]==1){
             Toast.makeText(Juego.this, "¡Felicidades! ¡has encontrado el cofre!", Toast.LENGTH_SHORT).show();
+            //Añado el numero de tiradas al array list
+            l.add(tiradas);
+            //Almaceno el menor valor de los resultados almacenados en el arraylist en una variable
+            record= (int) Collections.min(l);
+
             //Cambio a la activity de victoria
             Intent intent = new Intent(Juego.this, Victoria.class);
             intent.putExtra("score", tiradas);
+            intent.putExtra("record", record);
             startActivity(intent);
         }
 
@@ -24261,6 +24380,7 @@ public class Juego extends AppCompatActivity {
 
 
 
+    //Lanzo un dado consiguiendo un valor entre 1 y 6, aumento el numero de tiradas y calculo los posibles movimientos que tiene el jugador
     public void LanzarDados(View view){
         dados = (int) (Math.random()*6+1);
         tiradas++;
@@ -24372,12 +24492,12 @@ public class Juego extends AppCompatActivity {
             btn8x0.setImageResource(R.drawable.square_red);
         }
         if(ydado==0 && xmover==9) {
-            btn8x0.setEnabled(true);
-            btn8x0.setImageResource(R.drawable.square_red);
+            btn9x0.setEnabled(true);
+            btn9x0.setImageResource(R.drawable.square_red);
         }
         if(ydado==0 && xmover2==9){
-            btn8x0.setEnabled(true);
-            btn8x0.setImageResource(R.drawable.square_red);
+            btn9x0.setEnabled(true);
+            btn9x0.setImageResource(R.drawable.square_red);
         }
 
 
@@ -25978,11 +26098,13 @@ public class Juego extends AppCompatActivity {
 
 
 
+    //Método para volver a la activity de login
     public void CerrarSesion(View view)
     {
         Intent i= new Intent(this,login.class);
         startActivity(i);
     }
+    //Impido que el usuario pueda volver a la anterior activity
     @Override
     public void onBackPressed() {
 

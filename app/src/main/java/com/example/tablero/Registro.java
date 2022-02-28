@@ -63,6 +63,8 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
 
         progressDialog=new ProgressDialog(this);
 
+
+        //Asigno al botón registrar el siguiente método en el que recopilamos los datos introducidos por el usuario y en caso de que no haya problemas invvocamos al método registeruser
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +96,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         });
     }
 
+    //Método en el que mediante los datos introducidos por el usuario estos son registrados en el firebase
     private void registerUser(){
 
         mAuth.createUserWithEmailAndPassword(emailStr,contrasenaStr).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -101,10 +104,10 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
 
-                    //si la tarea es buena se lanza
+                    //si no hay ningun error se ejecutará lo siguiente y te llevará a la activity login
                     startActivity(new Intent(Registro.this , login.class));
                     finish();
-                    // creamos un hash map para guardar los campos
+                    // creamos un hash map para guardar los campos en la base de datos de firebase
                     Map<String, Object> map = new HashMap<>();
                     map.put("nombre",nombreStr);
                     map.put("email",emailStr);
@@ -136,56 +139,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     }
 
 
-    /**public void registrousuario(View view) {
-
-        String txtEmail = email.getText().toString().trim();
-        String txtNombre = nombre.getText().toString().trim();
-        String txtContrasena = contrsena.getText().toString().trim();
-
-
-        if (TextUtils.isEmpty(txtEmail)) {
-            Toast.makeText(this, "Se debe ingresar un correo", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(txtContrasena)) {
-            Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (TextUtils.isEmpty(txtNombre)) {
-            Toast.makeText(this, "Falta ingresar el nombre", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        progressDialog.setMessage("Registrando...");
-        progressDialog.show();
-
-        mAuth.createUserWithEmailAndPassword(txtEmail, txtContrasena).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(Registro.this, "Se ha registrado el usuario con el email: " + txtEmail, Toast.LENGTH_SHORT).show();
-
-                } else {
-                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                        Toast.makeText(getApplicationContext(), "El usuario ya existe", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "No se pudo registrar al usuario", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                progressDialog.dismiss();
-
-                //Lanzo toast
-                Context context = getApplicationContext();
-                CharSequence text = "Prueba";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-
-                //Cambio de Activity a login
-                Intent intent = new Intent(Registro.this, login.class);
-                startActivity(intent);
-            }
-        });
-    }**/
 
 
     @Override
