@@ -63,6 +63,7 @@
         android:layout_marginTop="26dp"
         android:layout_toEndOf="@+id/tvNumeroTiradas"
         android:background="#FFFFFF"
+        android:onClick="Ayuda"
         app:srcCompat="@drawable/info" />
 
     <TableLayout

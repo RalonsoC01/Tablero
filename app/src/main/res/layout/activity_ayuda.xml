@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Ayuda">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="#FFFFFF"
+                android:onClick="jugar"
+                app:srcCompat="@drawable/close" />
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:gravity="center"
+                android:text="¿Como jugar?"
+                android:textColor="@color/Letra"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:gravity="center"
+                android:text="Este juego consiste en que tienes que manejas a este señor pirata"
+                android:textColor="@color/Nueva_letra_azul"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/pirata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pirate" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:gravity="center"
+                android:text="Y tienes como objetivo llegar hasta este suculento tesoro de 32 píxeles"
+                android:textColor="@color/Nueva_letra_azul"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/cofre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/treasure" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:gravity="center"
+                android:text="Para moverte debes pulsar el dado y según el dado de salga puedes moverte ese número de casillas"
+                android:textColor="@color/Nueva_letra_azul"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/dado"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                app:srcCompat="@drawable/games_dice_craps_10813" />
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:gravity="center"
+                android:text="Una vez lanzado el dado se mostrará las casilla a las que se pueda mover al personaje marcandose en rojo como se puede ver en la siguiente imagen"
+                android:textColor="@color/Nueva_letra_azul"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/mover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ayuda" />
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:gravity="center"
+                android:text="para moverte a las posiciones marcadas tan solo deberá pulsar sobre ella."
+                android:textColor="@color/Nueva_letra_azul"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:gravity="center"
+                android:text="¡Pero ten cuidado, debes pensar bien donde moverte para llegar al cofre en las menos tiradas de dados posibles!"
+                android:textColor="@color/Letra"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

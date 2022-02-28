@@ -19,9 +19,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class Juego extends AppCompatActivity {
+
     /**Advetencia: en caso de que seas mi profesor y estes revisando el código le aviso de que al menos que tengas todo el dia libre no se lo
      * recomiendo porque va para largo.**/
-
 
     int tiradas=0;
     String nTiradas;
@@ -26104,6 +26104,14 @@ public class Juego extends AppCompatActivity {
         Intent i= new Intent(this,login.class);
         startActivity(i);
     }
+
+    //Método para acceder a la activity de ayuda
+    public void Ayuda(View view)
+    {
+        Intent i= new Intent(this,Ayuda.class);
+        startActivity(i);
+    }
+
     //Impido que el usuario pueda volver a la anterior activity
     @Override
     public void onBackPressed() {
