@@ -36,7 +36,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         contrasena = (EditText) findViewById(R.id.txtContrasena);
 
         play = (Button) findViewById(R.id.btnPlay);
-        play.setEnabled(true);
+        play.setEnabled(false);
         play.setTextColor(Color.parseColor("#9E9E9E"));
 
     }
